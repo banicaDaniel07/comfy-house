@@ -4,10 +4,10 @@
   "description": "Comfy House", 
    "default": "index.html",
   "scripts": {
-    "start": "npm start app/index.html",
-    "build": "npm build app/index.html --dist-dir ./dist"
+    "start": "parcel start index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
-  "author": "Daniel Banica",
+  "author": "Me",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",
