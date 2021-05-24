@@ -4,8 +4,8 @@
   "description": "Comfy House", 
    "default": "index.html",
   "scripts": {
-    "start": "parcel app/index.html",
-    "build": "parcel build app/index.html --dist-dir ./dist"
+    "start": "npm start app/index.html",
+    "build": "npm build app/index.html --dist-dir ./dist"
   },
   "author": "Daniel Banica",
   "license": "ISC",
