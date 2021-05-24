@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel start app/index.html",
-    "build": "parcel build app/index.html --dist-dir ./dist"
+    "build": "parcel build app/index.html  ./dist"
   },
   "repository": {
     "type": "git",
