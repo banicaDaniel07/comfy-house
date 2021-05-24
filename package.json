@@ -1,13 +1,13 @@
 {
   "name": "house",
   "version": "1.0.0",
-  "description": "",
-  "default": "index.html",
+  "description": "Comfy House", 
+   "default": "index.html",
   "scripts": {
-    "start": "parcel start app/index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "start": "parcel app/index.html",
+    "build": "parcel build app/index.html --dist-dir ./dist"
   },
-  "author": "",
+  "author": "Daniel Banica",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",
