@@ -1,0 +1,79 @@
+@import "variabiles";
+@import "animation";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $fontLato;
+}
+
+a,
+a:visited {
+  color: $darkBlack;
+  text-decoration: none;
+}
+
+.center {
+  padding: auto 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+body {
+  background-color: $lightBackground;
+}
+
+.button__show {
+  transform: translateX(0%) !important;
+  transition: all 1s ease-in-out;
+}
+
+.flex {
+  display: flex;
+
+  &__fd-c {
+    flex-direction: column;
+  }
+
+  &__jc-c {
+    justify-content: center;
+  }
+
+  &__jc-sb {
+    justify-content: space-between;
+  }
+
+  &__ai-c {
+    align-items: center;
+  }
+}
+
+.button {
+  padding: 1rem 3rem;
+  background-color: $lightOrange;
+  letter-spacing: 0.125rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: transparent;
+  border: 1px solid $lightOrange;
+  color: $lightOrange;
+}
+
+.fade-out {
+  animation: fade-out 0.2s ease-in-out forwards;
+}
+.fade-in {
+  animation: fade-in 0.2s ease-in-out forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.3s ease-in-out forwards;
+}
+.slide-in {
+  animation: slide-in 0.3s ease-in-out forwards;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel start app/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "sass": "^1.34.0"
+  }
+}

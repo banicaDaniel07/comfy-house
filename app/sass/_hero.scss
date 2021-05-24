@@ -1,0 +1,39 @@
+.hero {
+  width: 100%;
+  height: calc(100vh - 3.75rem);
+  background-image: url("../img/hero-bcg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 60px;
+
+  &__banner {
+    box-sizing: border-box;
+    height: 14.375rem;
+    width: 46.875rem;
+    padding: 2rem;
+    background-color: $white80;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 3.4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  &__button {
+    padding: 1rem 3rem;
+    background-color: $lightOrange;
+    letter-spacing: 0.125rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background: transparent;
+    border: 1px solid $lightOrange;
+    color: $lightOrange;
+  }
+}

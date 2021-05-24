@@ -1,0 +1,90 @@
+.products {
+  width: 100%;
+  height: 810px;
+  background-color: $white;
+  padding: 4rem 0;
+}
+
+.product {
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  &__spinner__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__spinner {
+    width: 73.125rem;
+    height: 600px;
+    margin: 0 auto;
+  }
+
+  &__container {
+    width: 73.125rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__content:hover {
+    opacity: 0.8;
+  }
+
+  &__image {
+    width: 17.1875rem;
+    height: 12rem;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  &__price {
+    font-size: 0.75;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    color: $lightOrange;
+    margin-top: 0.75rem;
+  }
+
+  &__add-button {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    background-color: $lightOrange;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0.8;
+    transform: translateX(110%);
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__add-button:hover {
+    color: $white;
+    opacity: 1;
+    transition: all 0.1s ease-in-out;
+  }
+}

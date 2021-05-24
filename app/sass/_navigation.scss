@@ -1,0 +1,46 @@
+.nav__center {
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background-color: $lightBackground;
+}
+
+.nav {
+  box-sizing: border-box;
+  width: 73.125rem;
+  height: 3.75rem;
+  padding: 0 1.5rem;
+  background-color: $lightBackground;
+
+  &__menu,
+  &__cart {
+    width: 1.3125rem;
+    height: 1.5rem;
+    color: $darkBlack;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__cart {
+    position: relative;
+
+    i {
+      position: absolute;
+      z-index: 5;
+    }
+
+    &__count {
+      position: absolute;
+      background-color: $lightOrange;
+      top: -11px;
+      right: -13px;
+      border-radius: 5px;
+      color: $white;
+      padding: 0 0.3125rem;
+      z-index: 10;
+    }
+  }
+}
