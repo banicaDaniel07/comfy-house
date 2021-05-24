@@ -17,7 +17,6 @@ const showCountAndTotal = () => {
 
     model.getCount();
     NavView.showCount(model.state.count);
-    
     model.getTotal();
     CartView.showTotal(model.state.total);
 }
@@ -28,6 +27,23 @@ const addButtonsListeners = () => {
     CartView.addIncreaseItemHandeler(increaseItem);
 }
 
+const renderUpdatedCart = () => {
+
+    CartView.clearCart();
+    model.state.cart.forEach(item => {
+        CartView.renderCart(item);
+    });
+}
+
+const updateAll = () => {
+    // update cart count and total
+    showCountAndTotal();
+    // first render the cart items
+    renderUpdatedCart();
+    // then add event listeners
+    addButtonsListeners();
+}
+
 const increaseItem = (e) => {
     const clicked  = e.currentTarget.closest('#item');
     // get index from data set
@@ -36,7 +52,6 @@ const increaseItem = (e) => {
         if(item.id === clickedId){
             model.addItemToCartState(clickedId);
             CartView.updateCountCart(clicked, item.quantity);
-            
             showCountAndTotal();
         }
     }
@@ -45,7 +60,6 @@ const increaseItem = (e) => {
 const clearCart = () => {
     model.clearCart();
     CartView.clearCart();
-    
     showCountAndTotal();
 }
 
@@ -60,15 +74,8 @@ const decreaseItem = (e) => {
             if(item.quantity == 1){
                 model.removeItemFromCartState(clickedId);
                 // CartView.hideCart();
+                updateAll();
                 
-                showCountAndTotal();
-                
-                CartView.clearCart();
-                model.state.cart.forEach(item => {
-                    CartView.renderCart(item);
-                });
-                
-                addButtonsListeners();
             };
             if(item.quantity > 1){
                 model.decreaseItemFromCartState(clickedId);
@@ -87,17 +94,10 @@ const addItemToCart = (e) => {
     // add item to cart state
     model.addItemToCartState(clickedIndex);
 
-    showCountAndTotal();
-    // clear cart so we don t do update cart
-    CartView.clearCart();
-    // render item in cart
-    model.state.cart.forEach(item => {
-        CartView.renderCart(item);
-    });
+    updateAll();
     // show cart after item added
     CartView.showCart();
 
-    addButtonsListeners();
 }
 
 
@@ -108,7 +108,7 @@ const controlProducts = async () => {
     ProductView.renderSpinner();
     //  get the data into state
    await model.fetchData();
-
+    // clear spinne
     ProductView.clearSpinner();
     //  render Products
     await model.state.products.forEach( product => {
@@ -118,7 +118,6 @@ const controlProducts = async () => {
     // add mouseover and mouse effect
     await ItemView.mouseOver(ItemView.showButton);
     await ItemView.mouseOut(ItemView.hideButton);
-
     await ItemView.addInsertButtonHandler(addItemToCart);
 
 }
@@ -127,17 +126,9 @@ const updateCart = () => {
     const cartJSON = localStorage.getItem('cart');
     const cart = JSON.parse(cartJSON);
     model.updateCartState(cart);
-    model.state.cart.forEach(item => {
-        CartView.renderCart(item);
-    });
-
-    showCountAndTotal();
-
-    addButtonsListeners();
+    updateAll();
     
 }
-
-
 
 const init = () => {
     controlProducts();
