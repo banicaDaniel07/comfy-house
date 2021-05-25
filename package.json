@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "parcel start app/index.html",
-    "build": "parcel build app/index.html --dist-dir ./dist"
+    "start": "parcel start index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
