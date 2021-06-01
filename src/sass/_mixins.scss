@@ -1,0 +1,16 @@
+$breakpoints: (
+  "1250px": 78.125em,
+  "910px": 56.875em,
+  "840px": 52.5em,
+  "710px": 44.375em,
+  "610px": 38.125em,
+  "575px": 35.9375em,
+  "420px": 26.25em,
+  "360px": 22.5em,
+);
+
+@mixin breakpoint($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}

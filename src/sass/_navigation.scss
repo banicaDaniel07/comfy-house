@@ -1,7 +1,9 @@
+@import "mixins";
+
 .nav__center {
   z-index: 500;
   top: 0;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   background-color: $lightBackground;
 }
@@ -41,6 +43,19 @@
       color: $white;
       padding: 0 0.3125rem;
       z-index: 10;
+    }
+  }
+}
+
+@include breakpoint("1250px") {
+  .nav {
+    width: 90%;
+  }
+}
+@include breakpoint("420px") {
+  .nav {
+    &__logo {
+      width: 10.25rem;
     }
   }
 }
