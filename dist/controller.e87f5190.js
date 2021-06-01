@@ -1585,8 +1585,11 @@ var controlProducts = /*#__PURE__*/function () {
 var updateCart = function updateCart() {
   var cartJSON = localStorage.getItem('cart');
   var cart = JSON.parse(cartJSON);
-  model.updateCartState(cart);
-  updateAll();
+
+  if (cart) {
+    model.updateCartState(cart);
+    updateAll();
+  }
 };
 
 var init = function init() {
@@ -1629,7 +1632,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50977" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53011" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

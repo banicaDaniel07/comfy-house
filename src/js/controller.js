@@ -11,7 +11,7 @@ import HeroViev from './views/heroView';
 const controlCart = () => {
     NavView.addCartButtonHandler(CartView.showCart)
     CartView.addCloseButtonHandler(CartView.hideCart)
-}
+}   
 
 const showCountAndTotal = () => {
 
@@ -125,8 +125,10 @@ const controlProducts = async () => {
 const updateCart = () => {
     const cartJSON = localStorage.getItem('cart');
     const cart = JSON.parse(cartJSON);
-    model.updateCartState(cart);
-    updateAll();
+    if(cart){
+        model.updateCartState(cart);
+        updateAll();
+    }
     
 }
 
